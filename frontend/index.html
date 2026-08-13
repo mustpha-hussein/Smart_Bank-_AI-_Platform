@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SmartBank AI banking intelligence platform">
+  <title>SmartBank AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="#dashboard" data-page-link="dashboard"><span class="brand-mark">▦</span><span><strong>SmartBank<br>AI</strong><small>Intelligence Platform</small></span></a>
+    <nav class="nav-list">
+      <button class="nav-link active" data-page="dashboard"><span>▦</span>Dashboard</button>
+      <button class="nav-link" data-page="loan"><span>▤</span>Loan Approval</button>
+      <button class="nav-link" data-page="fraud"><span>⬡</span>Fraud Detection</button>
+      <button class="nav-link" data-page="settings"><span>⚙</span>Settings</button>
+    </nav>
+    <div class="sidebar-footer"><span class="status-dot"></span>All systems operational</div>
+  </aside>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="menu-button" aria-label="Open navigation">☰</button>
+      <div class="mobile-brand">SmartBank <b>AI</b></div>
+      <label class="search"><span>⌕</span><input id="global-search" type="search" placeholder="Search tools and pages…"></label>
+      <button class="icon-button" aria-label="Notifications">♧</button>
+      <button class="avatar" aria-label="User account">MH</button>
+    </header>
+
+    <section class="page active" id="dashboard">
+      <div class="page-heading"><p class="eyebrow">Operations overview</p><h1>Good evening, welcome to SmartBank AI</h1><p>Your intelligent banking operations overview.</p></div>
+      <div class="overview-grid">
+        <article class="feature-card"><div class="card-title"><span class="card-icon">▤</span><span><h2>Loan Approval</h2><p>AI decisioning</p></span><span class="ready">Ready</span></div><p>Evaluate loan applications with a transparent risk assessment and fast eligibility decision.</p><button class="primary-button" data-goto="loan">Open workspace →</button></article>
+        <article class="feature-card"><div class="card-title"><span class="card-icon">⬡</span><span><h2>Fraud Detection</h2><p>Transaction intelligence</p></span><span class="ready">Ready</span></div><p>Analyze transactions for unusual patterns and review potential fraud in real time.</p><button class="primary-button" data-goto="fraud">Analyze transaction →</button></article>
+        <aside class="system-card"><h2>System status</h2><div><span>Loan model</span><b><i></i>Ready</b></div><div><span>Fraud pipeline</span><b><i></i>Ready</b></div><div><span>Environment</span><b>Production</b></div></aside>
+      </div>
+      <section class="quick-actions"><h2>Quick actions</h2><div><button data-goto="loan">▤ Check loan eligibility</button><button data-goto="fraud">⬡ Analyze a transaction</button><button data-goto="settings">⚙ Manage settings</button></div></section>
+    </section>
+
+    <section class="page" id="loan">
+      <div class="page-heading"><p class="eyebrow">Loan decisioning</p><h1>Loan Approval</h1><p>Review applicant details and generate an AI-powered eligibility assessment.</p></div>
+      <div class="workspace-grid">
+        <form id="loan-form" class="form-card">
+          <fieldset><legend>Applicant profile</legend><div class="form-grid"><label>Age<input name="age" type="number" value="34" min="18" max="110" required></label><label>Gender<select name="gender"><option value="female">Female</option><option value="male">Male</option></select></label><label>Education<select name="education"><option>High School</option><option>Associate</option><option selected>Bachelor</option><option>Master</option><option>Doctorate</option></select></label><label>Annual income ($)<input name="income" type="number" value="85000" min="1" required></label><label>Employment length (years)<input name="employment" type="number" value="8" min="0" required></label><label>Home ownership<select name="home"><option value="RENT">Rent</option><option value="MORTGAGE" selected>Mortgage</option><option value="OWN">Own</option><option value="OTHER">Other</option></select></label></div></fieldset>
+          <fieldset><legend>Loan request</legend><div class="form-grid"><label>Loan amount ($)<input name="amount" type="number" value="25000" min="1" required></label><label>Interest rate (%)<input name="rate" type="number" value="7.5" step="0.1" min="0" required></label><label>Loan % of income<input name="percent" type="number" value="0.29" step="0.01" min="0" max="1" required></label><label>Loan intent<select name="intent"><option value="HOMEIMPROVEMENT">Home improvement</option><option value="DEBTCONSOLIDATION">Debt consolidation</option><option value="EDUCATION">Education</option><option value="MEDICAL">Medical</option><option value="PERSONAL">Personal</option><option value="VENTURE">Venture</option></select></label></div></fieldset>
+          <fieldset><legend>Credit profile</legend><div class="form-grid"><label>Credit history (years)<input name="history" type="number" value="12" min="0" required></label><label>Credit score<input name="score" type="number" value="720" min="300" max="850" required></label><label>Previous loan default<select name="default"><option value="No" selected>No</option><option value="Yes">Yes</option></select></label></div></fieldset>
+          <button class="primary-button submit-button" type="submit">▤ Check eligibility</button>
+        </form>
+        <aside class="result-card" id="loan-result"><span class="result-icon">◌</span><p class="eyebrow">AI inference result</p><h2>No prediction yet</h2><p>Enter applicant information and select <b>Check eligibility</b>.</p></aside>
+      </div>
+    </section>
+
+    <section class="page" id="fraud">
+      <div class="page-heading"><p class="eyebrow">Transaction monitoring</p><h1>Fraud Detection</h1><p>Manual review and analysis of flagged transactions.</p></div>
+      <div class="workspace-grid">
+        <form id="fraud-form" class="form-card">
+          <fieldset><legend>Transaction information</legend><div class="form-grid"><label>Amount ($)<input name="amount" type="number" value="12450" min="0" required></label><label>Category<select name="category"><option value="shopping_pos">Shopping (in store)</option><option value="shopping_net">Shopping (online)</option><option value="travel">Travel</option><option value="food_dining">Food & dining</option><option value="entertainment">Entertainment</option><option value="grocery_pos">Groceries</option></select></label><label class="wide">Merchant<input name="merchant" value="Luxury Goods International Ltd" required></label></div></fieldset>
+          <fieldset><legend>Customer information</legend><div class="form-grid"><label>Gender<select name="gender"><option value="F">Female</option><option value="M">Male</option></select></label><label>Job<input name="job" value="Financial Analyst" required></label><label>State (two letters)<input name="state" value="NY" minlength="2" maxlength="2" required></label><label>Date of birth<input name="birth" type="date" value="1985-05-12" required></label></div></fieldset>
+          <fieldset><legend>Transaction date & time</legend><div class="form-grid"><label>Transaction date<input name="date" type="date" value="2023-10-27" required></label><label>Transaction time<input name="time" type="time" value="03:14" required></label></div></fieldset>
+          <button class="primary-button submit-button" type="submit">⬡ Analyze transaction</button>
+        </form>
+        <aside class="result-card" id="fraud-result"><span class="result-icon">⌛</span><p class="eyebrow">Transaction analysis</p><h2>No analysis yet</h2><p>Enter transaction details and select <b>Analyze transaction</b>.</p></aside>
+      </div>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="page-heading"><p class="eyebrow">Workspace controls</p><h1>Settings</h1><p>Manage your workspace preferences and system configurations.</p></div>
+      <div class="settings-layout"><nav class="settings-nav"><a href="#appearance">Appearance</a><a href="#model-info">Model info</a><a href="#about">About</a></nav><div class="settings-content">
+        <section class="settings-card" id="appearance"><h2>Appearance</h2><p>Theme preference</p><div class="theme-options"><button class="theme-choice selected" data-theme="light"><span>☀</span>Light</button><button class="theme-choice" data-theme="dark"><span>☾</span>Dark</button><button class="theme-choice" data-theme="system"><span>▣</span>System</button></div><button id="save-settings" class="primary-button">Save changes</button></section>
+        <section class="settings-card accent-card" id="model-info"><h2>Model information</h2><span class="ready">● System ready</span><div class="model-grid"><div><small>Loan model</small><b>● Ready</b></div><div><small>Fraud pipeline</small><b>● Ready</b></div></div></section>
+        <section class="settings-card about" id="about"><span class="brand-mark">▦</span><h2>SmartBank AI</h2><p>AI-Powered Banking Intelligence Platform</p><small>Version 1.0</small><footer><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Documentation</a></footer></section>
+      </div></div>
+    </section>
+  </main>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
