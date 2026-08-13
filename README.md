@@ -27,19 +27,34 @@ An enterprise-grade machine learning web application designed to streamline fina
 
 ### Installation & Running
 
+1. Ensure Python 3.11 or newer is installed.
+2. Create a virtual environment:
+
 ```powershell
-# Create virtual environment
 python -m venv .venv
-
-# Activate environment (Windows PowerShell)
-.\.venv\Scripts\Activate.ps1
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the server
-uvicorn backend.main:app --host 127.0.0.1 --port 8010 --reload
 ```
+
+3. Activate the environment in Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+4. Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+5. Start FastAPI using the most reliable method on Windows:
+
+```powershell
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8010 --reload
+```
+
+The application will be available at:
+
+- **Application URL**: [http://127.0.0.1:8010](http://127.0.0.1:8010)
 
 ### Access the Application
 
