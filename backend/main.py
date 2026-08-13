@@ -27,6 +27,11 @@ from afrip_pipeline_classes import (
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = ROOT / "models"
+
+if not (MODELS / "loan" / "loan_model.pkl").exists():
+    raise FileNotFoundError(
+        f"Model file not found: {MODELS / 'loan' / 'loan_model.pkl'}"
+    )
 DEFAULT_LOAN_THRESHOLD = 0.5
 
 
